@@ -36,7 +36,7 @@ async function fetchData(urlApi) {
         </div>
       `).slice(0, 4).join('')}
       `;
-      content.innerHTML = view;
+      content.innerHTML = view; //content es mi elemento en HTML, lo lleno con View
     } catch (error) {
       console.log(error);
     }
