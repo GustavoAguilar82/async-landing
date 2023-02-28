@@ -40,7 +40,21 @@ async function fetchData(urlApi) {
     } catch (error) {
       console.log(error);
     }
-  })();
+})();
 
   //https://rapidapi.com/ytdlfree/api/youtube-v31/   enlace de apis
 
+
+  //Contact form
+  const contactForm = document.getElementById("form");
+  const buttonMailTo = document.getElementById("mailTo");
+  contactForm.addEventListener('submit', submitClicked);
+
+  function submitClicked(event){
+    event.preventDefault();
+    
+    const form = new FormData(this);
+    buttonMailTo.setAttribute('href',`mailto:gustavoalonsoaa82@gmail.com?subject=${form.get('subject')}&body=${form.get('message')}`) 
+    buttonMailTo.click();
+
+  }
